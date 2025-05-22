@@ -1,4 +1,4 @@
-# PP5
+![image](https://github.com/user-attachments/assets/bd8d434d-e625-4589-8337-0def76bbaa11)# PP5
 
 ## Goal
 
@@ -44,7 +44,68 @@ In this exercise you will:
 
 ```bash
 # Paste here the sequence of git commands you ran
+•	mkdir PPT5 (neues directory anlegen)
+•	cd PPT5 (wechseln in directory PPT5)
+•	git init (Initialisierung des Projekts PPT5/Umwandlung in ein Git-Repository)
+•	git checkout -b feature-1 (Anlegen/initialisieren der neuen branch ,,feature-1‘‘) 
+•	touch feature.txt (Erstellen der Datei ,,feature.txt‘‘)
+•	vim feature.txt (Öffnen der Datei ,,feature.txt‘‘ im vim-Editor und Eintragung von Änderungen)
+•	git add feature.txt (Stagen der Änderungen an Datei ,,feature.txt‘‘ in branch ,,feature-1‘‘)
+•	git commit (committen der Änderungen)
+•	git checkout master (Wechseln in branch master)
+•	git merge feature-1 (Änderungen aus branch feature-1 in branch master überführen)
+
 # and the relevant terminal output (e.g., branch listing, merge messages)
+
+•	nachdem die Änderungen an der Datei feature.txt vorgenommen wurden:
+o	git status
+
+On branch feature-1
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        feature.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+![TASK 1 - Ausgabe 1](https://github.com/user-attachments/assets/a93018fb-9c67-42a3-8af1-6ab971797567)
+
+ 
+
+•	nach git add feature.txt
+o	git status
+
+On branch feature-1
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   feature.txt
+
+![TASK 1 - Ausgabe 2](https://github.com/user-attachments/assets/b8bf43ab-f2ca-4332-aaab-feea92a55e74)
+
+ 
+
+•	nach git commit (und Eingabe der Commit Message „Initial commit‘‘ über den Text editor nano)
+o	Ausgabe:
+
+[feature-1 (root-commit) 3dd6ecc] ''Initial commit''
+ 1 file changed, 7 insertions(+)
+ create mode 100644 feature.txt
+![TASK 1 - Ausgabe 3](https://github.com/user-attachments/assets/42b9b6b3-cf0d-4acb-b9a6-fbb132dc8f33)
+
+ 
+
+•	Nach git merge feature-1 und git log –online
+o	Ausgabe:
+
+3dd6ecc (HEAD -> master, feature-1) ''Initial commit''
+![TASK 1 - Ausgabe 4](https://github.com/user-attachments/assets/3d09c7e1-138b-4ea6-9b5e-0f98aa75ee41)
+
+ 
+
 ```
 
 ---
@@ -68,6 +129,50 @@ In this exercise you will:
 
 ```bash
 # Paste here the push & clone commands and outputs
+
+•	Push command und zugehörige Ausgabe:
+
+kami@DESKTOP-H0USJ60:~/PPT5_Task2$ git push origin-ssh master
+user48@128.140.85.215's password:
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 545 bytes | 68.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To 128.140.85.215:~/repos/myproject.git
+ * [new branch]      master -> master
+
+![Task 2 Push command und output](https://github.com/user-attachments/assets/9135de13-b33a-418b-b31b-7f329e4bb9b6)
+
+•	Clone command und zugehörige Ausgabe:
+
+kami@DESKTOP-H0USJ60:~$ mkdir myproject-clone
+kami@DESKTOP-H0USJ60:~$ cd myproject-clone
+kami@DESKTOP-H0USJ60:~/myproject-clone$ git clone user48@128.140.85.215:~/repos/myproject.git
+Cloning into 'myproject'...
+user48@128.140.85.215's password:
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+kami@DESKTOP-H0USJ60:~/myproject-clone$ cd myproject
+kami@DESKTOP-H0USJ60:~/myproject-clone/myproject$ git log
+commit 65d6059ed438b253292a2bab065191b78ed7db5f (HEAD -> master, origin/master, origin/HEAD)
+Author: Kai Mischke <kai-timo.mischke@stud.thga.de>
+Date:   Wed May 21 23:18:12 2025 +0200
+
+    Quick commit
+
+commit 14af5885b359b558ed0a4a2878570ffe11456cd6
+Author: Kai Mischke <kai-timo.mischke@stud.thga.de>
+Date:   Wed May 21 21:11:08 2025 +0200
+
+    Quick commit
+
+![Task 2 clone command und output](https://github.com/user-attachments/assets/070f6a9d-2b17-4eaf-9592-0967a311897d)
+
 ```
 
 ---
@@ -90,6 +195,12 @@ In this exercise you will:
 
 ```bash
 # Paste here the remote‐adding & push outputs
+
+Beim Versuch die THGA GitLab Seite zu öffnen kommt folgende Meldung:
+
+![Page not found](https://github.com/user-attachments/assets/a846e426-46cb-467c-9f35-de983057f11d)
+
+
 ```
 
 ---
